@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { AuthGuard } from '@nestjs/passport';
-import { PostCreateRequest } from './dto/postCreateRequest.dto';
+import { PostCreateRequest } from './dto/PostCreateRequest.dto';
 import { CommentRequestDto } from './dto/CommentRequest.dto';
 
 @Controller('post')

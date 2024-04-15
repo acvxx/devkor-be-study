@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { PostCreateRequest } from './dto/postCreateRequest.dto';
+import { PostCreateRequest } from './dto/PostCreateRequest.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { PostInfoResponseDto } from './dto/PostInfoResponse.dto';
 import {
