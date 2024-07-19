@@ -12,17 +12,25 @@ model User {
   id        Int       @id @default(autoincrement())
   email     String    @unique
   createdAt DateTime  @default(now())
-  nickname  String
+  nickname  String    @unique
   password  String
+  refreshToken String?
   likes     Like[]
   posts     Post[]
   Comment   Comment[]
+}
+model Verification {
+  email     String    @unique
+  purpose   String    
+  code      Int
+  verify    Boolean   @default(false)
+  createdAt DateTime  @default(now())
 }
 
 model Post {
   id        Int       @id @default(autoincrement())
   title     String
-  body      String
+  content      String
   userId    Int
   view      Int       @default(0)
   createdAt DateTime  @default(now())
@@ -34,7 +42,6 @@ model Post {
 model Comment {
   id             Int      @id @default(autoincrement())
   content        String
-  body           String
   userId         Int
   postId         Int
   replyCommentId Int      @default(0)
